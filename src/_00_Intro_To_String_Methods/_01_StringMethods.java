@@ -34,13 +34,25 @@ public class _01_StringMethods {
 
     // Given Strings s1 and s2, return the longer String
     public static String longerString(String s1, String s2) {
-        return null;
+    	if (s1.length() > s2.length()) {
+			return s1;
+		}
+    	if (s1.length() < s2.length()) {
+			return s2;
+		} 
+		else {
+			return "equal";
+		}
     }
 
     // If String s contains the word "underscores", change all of the spaces
     // to underscores
     public static String formatSpaces(String s) {
-        return null;
+    	String replaced = s;
+    	if (s.contains("underscores")) {
+			 replaced = s.replace(' ', '_');
+		}
+        return replaced;
     }
 
     // Return the name of the person whose LAST name would appear first if they
@@ -48,6 +60,24 @@ public class _01_StringMethods {
     // You cannot assume there are no extra spaces around the name, but you can
     // assume there is only one space between the first and last name
     public static String lineLeader(String s1, String s2, String s3) {
+    	char last1 = s1.trim().charAt(s1.trim().indexOf(' ')+1);
+    	char last2 = s2.trim().charAt(s2.trim().indexOf(' ')+1);
+       	char last3 = s3.trim().charAt(s3.trim().indexOf(' ')+1);
+    	if (last1 < last2) {
+			if (last1 < last3) {
+				return s1.trim();
+			}
+		}
+    	if (last2 < last1) {
+			if (last2 < last3) {
+				return s2.trim();
+			}
+		}
+    	if (last3 < last2) {
+			if (last3 < last1) {
+				return s3.trim();
+			}
+		}
         return null;
     }
 
