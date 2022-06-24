@@ -77,6 +77,7 @@ public class _00_StringMethodsDemo {
         while( index != -1 ) {
             numOccurances++;
             index = str.indexOf(substring, index + substring.length());
+            // str.indexOf("to", 8(position of the t in to inside of the string) + 2);
         }
         
         System.out.println("1. The substring '" + substring + "' appeared: " + numOccurances +
