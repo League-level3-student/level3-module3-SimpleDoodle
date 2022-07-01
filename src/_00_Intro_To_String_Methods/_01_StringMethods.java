@@ -119,13 +119,23 @@ public class _01_StringMethods {
 	// Call Utilities.decrypt at the bottom of this file to decrypt the
 	// cyphertext (encrypted text)
 	public static String decrypt(String s, char key) {
-		return null;
+		byte b = (byte)key;
+		String decryption = Utilities.decrypt(s, b);
+		return decryption;
 	}
 
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
-		return 0;
+		int counter = 0;
+		int index = s.indexOf(substring);
+		 while( index <= s.lastIndexOf(substring)) {
+			 if (s.substring(index + substring.length(), index + substring.length()+1).equals(" ")) {
+				counter++;
+			}
+			 index = s.indexOf(substring, index + substring.length());
+		 }
+		return counter;
 	}
 
 	// Given String s, return the number of characters between the first
