@@ -129,14 +129,18 @@ public class _01_StringMethods {
 	public static int wordsEndsWithSubstring(String s, String substring) {
 		int counter = 0;
 		int index = s.indexOf(substring);
-		 while( index <= s.lastIndexOf(substring)) {
+			for (int i = 0; i < s.length(); i++) {
+				for (int j = 0; j < s.length()-1; j++) {
+		//			if (s.substring(index + substring.length()) == " ") {
+		//				
+		//			}
+		//		}
+		//	}
 			 if (s.substring(index + substring.length(), index + substring.length()+1).equals(" ")) {
 				counter++;
 			}
-			 index = s.indexOf(substring, index + substring.length());
+				return counter;
 		 }
-		return counter;
-	}
 
 	// Given String s, return the number of characters between the first
 	// occurrence of String substring and the final occurrence
